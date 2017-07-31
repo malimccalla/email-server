@@ -40,12 +40,23 @@ passport.use(
       clientID: keys.facebookClientID,
       clientSecret: keys.facebookClientSecret,
       callbackURL: '/auth/facebook/callback',
-      profileFields: ['email', 'id', 'displayName', 'name', 'gender'],
+      profileFields: [
+        'email',
+        'id',
+        'displayName',
+        'name',
+        'gender',
+        'age_range',
+        'cover',
+        'locale',
+        'music',
+        'picture',
+      ],
     },
     (accessToken, refreshToken, profile, done) => {
       console.log('Acess token', accessToken);
       console.log('refreshToken', refreshToken);
-      console.log('profile', profile);
+      console.log('profile', profile._json);
     },
   ),
 );
