@@ -4,12 +4,14 @@
     "no-console": 0,
     "comma-dangle": 0,
     "arrow-body-style": 0,
+    "react/jsx-filename-extension": 0,
     "no-shadow": [ "error", { "allow": ["error", "err", "done", "resolve", "reject"] }],
     import/no-extraneous-dependencies: [2, { devDependencies: true }],
     "import/prefer-default-export": 0,
     "no-underscore-dangle": 0,
   },
   "env": {
-    "node": true
+    "node": true,
+    "browser": true
   }
 }
