@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Header from './Header';
@@ -30,8 +30,8 @@ class App extends Component {
   }
 }
 
-// App.propTypes = {
-//   fetchUser: PropTypes.func.isRequired,
-// };
+App.propTypes = {
+  fetchUser: PropTypes.func.isRequired,
+};
 
 export default connect(null, actions)(App);
