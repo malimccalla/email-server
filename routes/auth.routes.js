@@ -18,7 +18,7 @@ module.exports = app => {
   });
 
   app.get('/api/hi', (req, res) => {
-    res.send({ hi: 'there' });
+    res.status(200).json({ hi: 'there' });
   });
 
   app.get('/api/current_user', (req, res) => {
