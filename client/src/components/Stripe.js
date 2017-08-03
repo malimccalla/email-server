@@ -6,7 +6,6 @@ import * as actions from '../actions';
 
 class Stripe extends Component {
   render() {
-    console.log('stripe publishable key', process.env.REACT_APP_STRIPE_KEY);
     return (
       <StripeCheckout
         amount={500}
