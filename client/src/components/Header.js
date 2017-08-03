@@ -20,6 +20,9 @@ class Header extends Component {
           <li key="1">
             <Stripe />
           </li>,
+          <li key="3">
+            Credits: {this.props.auth.credits}
+          </li>,
           <li key="2">
             <a href="/api/logout">Log out</a>
           </li>,
