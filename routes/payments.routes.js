@@ -6,7 +6,7 @@ module.exports = app => {
   app.post('/api/stripe', requireLogin, async (req, res) => {
     try {
       await stripe.charges.create({
-        amount: 300,
+        amount: 500,
         currency: 'USD',
         description: '$5 for 5 credits',
         source: req.body.id,
