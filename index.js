@@ -28,7 +28,6 @@ require('./routes/auth.routes')(app);
 require('./routes/payments.routes')(app);
 
 if (process.env.NODE_ENV === 'production') {
-  app.setHeader('content-type', 'application/json; charset=utf-8');
   app.use(express.static('client/build'));
 
   app.get('*', (req, res) => {
