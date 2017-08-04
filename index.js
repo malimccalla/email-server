@@ -5,6 +5,7 @@ const passport = require('passport');
 const path = require('path');
 const bodyParser = require('body-parser');
 const keys = require('./config/keys');
+const cors = require('cors');
 require('./models/user.model');
 require('./services/passport');
 
@@ -13,6 +14,7 @@ mongoose.connect(keys.mongoURI);
 const app = express();
 
 app.use(bodyParser.json());
+app.use(cors());
 app.use(
   cookieSession({
     maxAge: 30 * 24 * 60 * 60 * 1000,
@@ -26,6 +28,7 @@ require('./routes/auth.routes')(app);
 require('./routes/payments.routes')(app);
 
 if (process.env.NODE_ENV === 'production') {
+  app.setHeader('content-type', 'application/json; charset=utf-8');
   app.use(express.static('client/build'));
 
   app.get('*', (req, res) => {
